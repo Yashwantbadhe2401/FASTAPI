@@ -45,3 +45,27 @@ def protected_route(token: str = Depends(oauth2_scheme)):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, 
                             detail="Invalid token")
     return {"msg": f"Welcome {username}, you are authenticated!"}
+
+
+
+
+
+@router.get("/protected")
+def protected_route(token: str = Depends(oauth2_scheme)):
+    username = decode_access_token(token)
+    if not username:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, 
+                            detail="Invalid token")
+    return {"msg": f"Welcome {username}, you are authenticated!"}
+
+
+
+
+
+@router.get("/protected")
+def protected_route(token: str = Depends(oauth2_scheme)):
+    username = decode_access_token(token)
+    if not username:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, 
+                            detail="Invalid token")
+    return {"msg": f"Welcome {username}, you are authenticated!"}

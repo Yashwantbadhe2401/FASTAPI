@@ -6,3 +6,4 @@ app = FastAPI()
 
 # Register routes
 app.include_router(hello.router)
+
